@@ -1,32 +1,64 @@
-// dom document object mode
-'use strict'
-function cambiacolor(color){
-    caja.style.background = color;
-}
+// eventos
+// son funciones que se ejecutan cada vez que sucede algo
 
-// var caja = document.getElementById("micaja");
-var caja = document.querySelector("#micaja");
+//eventos del mouse (click a algo, mouse a otra cosa, etc)
 
-caja.style.background = "red";
-caja.style.padding = "20px";
-caja.style.color = "white";
-caja.className = "hola"
+// evento click (hay un problema con firefox, el resto funciona, firefox escupe otro bg)
+function cambiarColor(){
+    console.log("Me has dado click");
+    console.log(boton.style.background);
 
-
-console.log(caja);
-
-// meter elementos dentro de una etiqueta 
-var todoslosdivs = document.getElementsByTagName('div');
-var contenidotexto = todoslosdivs[2]; //mostrar el contenido de una etiqueta exacta
-contenidotexto.innerHTML = "boca la concha de tu madre"; //modificar el contenido de ese div exacto
-
-var valor;
-
-for(valor in todoslosdivs){
-    if(typeof todoslosdivs[valor].textContent == 'string'){
-        var parrafo =  document.createElement ("p");
-        var texto = document.createTextNode(todoslosdivs[valor].textContent);
-        parrafo.appendChild(texto); // append añade antes
-        document.querySelector("#miseccion").prepend(parrafo); // prepend añade despues de la etiqueta
+    var pat = /green/i;
+    if(pat.test(boton.style.background)){
+        boton.style.background = "red";
+    }else {
+        boton.style.background = "green";
     }
+    return true;
 }
+
+//evenlistener (Escucha eventos)
+var boton = document.querySelector("#boton");
+
+// evento click
+boton.addEventListener('click', function(){
+    cambiarColor();
+});
+
+// evento mouseover
+boton.addEventListener('mouseover',function(){
+    boton.style.background = "pink";
+});
+
+//evento mouseout
+boton.addEventListener('mouseout',function(){
+    boton.style.background = "white";
+});
+
+var input = document.querySelector("#camponombre");
+
+//focus
+input.addEventListener('focus',function(){
+   console.log("[focus] estas dentro del input");
+});
+
+//blur
+input.addEventListener('blur',function(){
+   console.log("[blur] estas fuera del input");
+});
+
+// keydown (cuando estas pulsando una tecla)
+input.addEventListener('keydown', function(event){
+    console.log("[keydown] Pulsando esta tecla ", String.fromCharCode(event.KeyCode));
+ });
+
+//keypress
+input.addEventListener('keypress', function(event){
+    console.log("[keypress] tecla presionada ", String.fromCharCode(event.KeyCode));
+ });
+
+
+//keyup
+input.addEventListener('keyup', function(event){
+    console.log("[keyup] tecla presionada ", String.fromCharCode(event.KeyCode));
+ });
