@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio dom, eventos y funciones</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--
+        1 - formulario campos: nombre, apellido y edad
+        2 - boton de enviar el formulario: evento submit 
+        3 - mostar eventos por pantalla 
+        4 - validacion de formulario
+    -->
+    <h1>Ejercico DOM, eventos y funciones - curso js</h1>
+
+    <div class="box">
+        <form action="" method="divOST" id="formulario" onsubmit="return false">
+
+            <label for="nombre">nombre</label> <br>
+            <input type="text" name="nombre" id="nombre"> <br>
+           <span id="errornombre"></span>
+
+            <label for="apellidos">apellido</label> <br>
+            <input type="text" name="apellidos" id="apellidos"> <br>
+
+            <label for="edad">edad</label> <br>
+            <input type="number" name="edad" id="edad"> <br>
+
+            <input type="submit" value="enviar" id="submit">
+        </form>
+    </div>
+
+    <div class="box dashed">
+        <h3>Informacion del usuario</h3>
+        <hr>
+    </div>
+
+    <script type="text/javascript" src="js/formulario.js"></script>
+</body>
+</html>
