@@ -1,0 +1,7 @@
+.altoPrecio {
+  color: grey;
+  font-size: 38px; }
+  .altoPrecio.fondoRojo {
+    background: red; }
+  .altoPrecio.subrayado {
+    text-decoration: underline; }
